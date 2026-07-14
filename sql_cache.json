@@ -1,0 +1,21 @@
+{
+  "48bea148b95d400b09653827b60410a110aa6ec3ea8c96063d6bff51ddf4dd72": "SELECT COUNT(*)\nFROM shifts\nWHERE shift_category = 'Scheduled'\n  AND shift_status = 'NoShow'\n  AND shift_date >= '2025-12-01' AND shift_date < '2026-01-01'",
+  "0ba5efc58f13905967fbe6a556a09b8cdc4708c44ac30a7162a86c38bc63119f": "SELECT\n  COUNT(*)\nFROM shifts\nWHERE\n  shift_status = 'NoShow' AND shift_date >= '2025-09-01' AND shift_date < '2025-10-01'",
+  "cb948b0b66ed8e848bf0ae8c38a5540230ab036d8efff9e09a9417c57780b596": "SELECT count(DISTINCT employee_number) FROM shifts",
+  "184363ea06705400419ba7694536abca72b3740a01f1359e5b028d745309c215": "SELECT COUNT(*)\nFROM shifts\nWHERE shift_status != 'Completed'\n  AND shift_date >= '2025-01-01' AND shift_date < '2026-01-01'",
+  "efaece5d4633ef47656eeb443bb26ea32c5b9d4ba1063182ab0848212b25e047": "SELECT COUNT(*) FROM shifts WHERE shift_status != 'Completed'",
+  "56388d9abce11e35dedfc2a77ce2fb86fa2445b349c34b99424b4134b6aeff56": "SELECT COUNT(*)\nFROM shifts\nWHERE shift_date >= '2025-01-01' AND shift_date < '2026-01-01'\n  AND shift_status != 'Completed'",
+  "38583fb15b4b638483cc310812958d98b7aacd8d54464ae29b0922f60968e3a3": "SELECT\n  COUNT(*)\nFROM shifts\nWHERE\n  shift_status = 'NoShow' AND shift_date >= '2025-09-01' AND shift_date < '2025-10-01'",
+  "68115bca6f6701b1db4404289ea618e04fc61eecc21a92017f35733c5fd2b8e4": "SELECT shift_date\nFROM shifts\nWHERE shift_status = 'NoShow'\nGROUP BY shift_date\nORDER BY COUNT(*) DESC\nLIMIT 1",
+  "cc0aa7ebfb0de483947383924550d9fd4f78608f853c5f7cfd6263681e633ea9": "SELECT\n  COUNT(*)\nFROM shifts\nWHERE\n  shift_status = 'NoShow' AND shift_date >= '2025-09-01' AND shift_date < '2025-10-01'",
+  "6e980cf790c249ce7373fcbf36598a7d9637564d890d28d8d606e8cafc04432a": "SELECT AVG(total_work_minutes)\nFROM shifts\nWHERE job_name = 'Cleaning';",
+  "c7ec72f186d29200de67d7bd202c650c72dd822e9a0c8fa41cfead9bf93b35ea": "SELECT COUNT(DISTINCT employee_number)\nFROM shifts\nWHERE customer_name ILIKE 'Commonwealth of Kentucky'",
+  "47d62d3ca1e23159fc2c44dacc766994e7f6867cf549083c841f3941f5ff82fc": "SELECT AVG(total_work_minutes)\nFROM shifts\nWHERE role_name ILIKE 'cleaner'\n  AND shift_status = 'Completed'",
+  "66da273dcfdffaaf8f84e3df52243f09ee15dda3889389dfd11809658e8ad002": "SELECT\n  COUNT(*)\nFROM shifts\nWHERE\n  shift_status = 'NoShow' AND shift_date >= '2026-05-01' AND shift_date < '2026-06-01'",
+  "e77defc2674384bc16e11f3cfea255525a0d5dd12f07b42fb2f4155a27506501": "SELECT COUNT(*)\nFROM shifts\nWHERE shift_category = 'Scheduled'\n  AND shift_date >= '2026-05-01' AND shift_date < '2026-06-01'",
+  "a0a370c6d7a6d844e2b8d068946acef46a1694595b4e28b6fcd853f57af71798": "SELECT COUNT(*)\nFROM shifts\nWHERE shift_date >= '2026-05-01' AND shift_date < '2026-06-01'\n  AND shift_status = 'NoShow'\n  AND customer_name ILIKE '%maricopa%'",
+  "4d73e0dc10b5d92ee5fb15b655f4deef600456501d17facfe2c3ad112fafc0d4": "SELECT COUNT(*)\nFROM shifts\nWHERE shift_category = 'Scheduled'",
+  "57b92c12aaa26dc514b6c8a3122993b3b4738de419569e997a860912b5182ada": "SELECT\n  ROUND(100.0 * SUM(CASE WHEN shift_status = 'NoShow' THEN 1 ELSE 0 END) / COUNT(*), 1)\nFROM shifts\nWHERE\n  shift_date >= '2026-02-01' AND shift_date < '2026-03-01'",
+  "33c7b7366eb7124e5b7ecca81a65d87c173837358f110a54969aff97ffb4c41a": "SELECT\n  ROUND(100.0 * SUM(CASE WHEN shift_status = 'NoShow' THEN 1 ELSE 0 END) / COUNT(*), 1)\nFROM shifts\nWHERE\n  shift_date >= '2026-05-01' AND shift_date < '2026-06-01'",
+  "7816b00cccbf031901bd20568471793eaa65c63df2d91c0825898a84b0978938": "SELECT\n  SUM(CASE WHEN shift_category = 'Unscheduled' THEN 1 ELSE 0 END) * 1.0 / SUM(CASE WHEN shift_category = 'Scheduled' THEN 1 ELSE 0 END) AS unscheduled_to_scheduled_ratio\nFROM shifts\nWHERE\n  shift_date >= '2026-04-01' AND shift_date < '2026-05-01';"
+}
