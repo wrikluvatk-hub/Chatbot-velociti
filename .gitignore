@@ -1,7 +1,8 @@
-venv/
+﻿venv/
 .env
 .streamlit/secrets.toml
 __pycache__/
 sql_cache.json
 qa_log.jsonl
 *.pyc
+*.csv

@@ -1,4 +1,4 @@
-from chatbot.chatbot import uses_only_known_columns, get_valid_columns
+from chatbot import uses_only_known_columns, get_valid_columns
 import duckdb
 
 con = duckdb.connect('velociti.duckdb', read_only=True)

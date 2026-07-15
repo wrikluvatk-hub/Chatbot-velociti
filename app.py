@@ -3,7 +3,7 @@ import duckdb
 import pandas as pd
 import streamlit as st
 
-from chatbot.chatbot import (
+from chatbot import (
     get_live_schema,
     get_valid_columns,
     get_column_table_map,
@@ -49,7 +49,7 @@ st.markdown(
     .info-card strong {color: #0f172a; font-size: 0.95rem;}
     .info-card .sub {color: #475569; font-size: 0.85rem; line-height: 1.5;}
     .stChatMessage {border-radius: 14px;}
-    div[data-testid="stMetric"] {
+     div[data-testid="stMetric"] {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
         border-radius: 12px;
@@ -68,28 +68,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-def check_password():
-    """Shows a password prompt and returns True only once the correct password is entered."""
-    def password_entered():
-        if st.session_state["password_input"] == st.secrets.get("APP_PASSWORD", ""):
-            st.session_state["password_correct"] = True
-            del st.session_state["password_input"]
-        else:
-            st.session_state["password_correct"] = False
 
-    if st.session_state.get("password_correct", False):
-        return True
-
-    st.markdown("### 🔒 Velociti Shift Intelligence")
-    st.caption("This app is private. Enter the password to continue.")
-    st.text_input("Password", type="password", on_change=password_entered, key="password_input")
-    if "password_correct" in st.session_state and not st.session_state["password_correct"]:
-        st.error("Incorrect password.")
-    return False
-
-
-if not check_password():
-    st.stop()
 # ============================================================
 # Startup checks -- production-friendly error handling
 # ============================================================
