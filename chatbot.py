@@ -12,7 +12,7 @@ load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 DB_FILE = "velociti.duckdb"
-MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite")
+MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
 CACHE_FILE = "sql_cache.json"
 LOG_FILE = "qa_log.jsonl"
 
